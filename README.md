@@ -1,4 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project LOOP
+
+Project LOOP is a multi-tenant AI customer-feedback intelligence platform.
+
+## Module 1: Foundation
+
+The foundation uses Next.js 14 App Router, TypeScript, Tailwind CSS, PostgreSQL, Prisma, and Auth.js credentials authentication.
+
+### Local setup
+
+1. Copy `.env.example` to `.env` and set `DATABASE_URL` and `NEXTAUTH_SECRET`.
+2. Ensure PostgreSQL has the `vector` extension available.
+3. Install dependencies with `npm install`.
+4. Generate Prisma Client with `npm run db:generate`.
+5. Create the first migration with `npm run db:migrate -- --name init`.
+6. Start the application with `npm run dev`.
+
+Authentication credentials require `email`, `password`, and `workspaceId`. Session data includes the authenticated user's `workspaceId` and `role`. Application queries must use that session workspace ID as their tenant filter.
 
 ## Getting Started
 
